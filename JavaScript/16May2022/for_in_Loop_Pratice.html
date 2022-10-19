@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Table with For Loop</h2>
+
+	<script>
+		
+		var students = ["Sajedul", "Rakib", "Aminul", "Jahid"];
+
+			document.write('<table border="1" width="200" height="100">');
+
+			document.write('<tr>');
+
+			document.write('<th>');
+			document.write('SN');
+			document.write('</th>');
+
+			document.write('<th>');
+			document.write('Name');
+			document.write('</th>');
+
+			
+
+			document.write('<tr>');
+
+
+			// document.write('<th>');
+			// document.write('Name');
+			// document.write('</th>');
+
+
+
+			for( var i=0; i<students.length; i++){
+
+				
+
+				document.write('<tr>');
+
+				document.write('<td>' + i +'</td>' + '<td>'+ students[i] +'</td>' );
+
+				document.write('<tr>');
+
+
+				
+			}
+
+			document.write('</table>');
+
+
+	</script>
+
+	
+
+	
+
+	
+
+
+</body>
+</html>

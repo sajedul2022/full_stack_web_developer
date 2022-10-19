@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03. Factorial Value</title>
+</head>
+<body>
+	<!-- <h2>Calculate Factorial Value</h2> -->
+
+	<script>
+		function factorial(x){
+			if(x == 0){
+				return 1;
+
+			}
+			return x * factorial(x-1);
+
+		}
+
+		document.write("<h2> Factorial Number is :  " + factorial(prompt("Enter Any Number", "")) + "</h2>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		
+		function resultShow(){
+
+			var mcq = document.myform.mcq.value;
+			mcq = parseInt(mcq);
+
+			var description = document.myform.description.value;
+			description = parseInt(description);
+
+			var evidence = document.myform.evidence.value;
+			evidence = parseInt(evidence);
+
+			var shows = "";
+			// shows += "Your result  <br>";
+			shows += "MCQ: " + mcq + "<br>";
+			shows += "Description: " + description + "<br>";
+			shows += "Evidence: " + evidence + "<br>";
+
+
+				if(mcq >= 80 && description >= 60 && evidence >=60){
+					shows += "You Have Passed";
+				}else{
+					shows += "<h1> You Have Failed </h1>";
+				}
+
+				document.getElementById('viewresult').innerHTML = shows;		
+		}
+
+	</script>
+
+	<h1>Students Result</h1>
+
+	<form action="" name="myform">
+		<input type="text" name="mcq" placeholder="Enter MCQ Number"> <br>
+		<input type="text" name="description" placeholder="Enter Descriptive Number"> <br>
+		<input type="text" name="evidence" placeholder="Enter Evidence Number"> <br> <br>
+		<input type="reset" value="Reset"> 
+		<input type="button" value="Show Result" onclick="resultShow()">
+	</form> <br>
+
+
+	<div id="viewresult"></div>
+
+	<!-- <script>resultShow();</script> -->
+	
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		function findWord(){
+			var content = document.search.content.value;
+			content = content.toLowerCase();
+
+			var searchWord = document.search.searchWord.value;
+			searchWord = searchWord.toLowerCase();
+
+			var result = content.search(searchWord);
+			var display;
+
+			if(result==-1){
+				// alert("Doesn't match with this word,  " + searchWord);
+				display = "Doesn't match with this word,  " + searchWord;
+
+
+			}else{
+				// alert("Yes, Found this word,  " + searchWord + " Which Index is - " + result);
+				display = "Yes, Found this word,  " + searchWord + " Which Index is - " + result;
+			}
+
+			// document.write(display);
+			document.getElementById("show").innerHTML = display;
+		}
+	</script>
+
+	<h1>Search Engine</h1>
+
+	<form action="" name="search">
+		<textarea name="content" placeholder="Put Your Content" cols="30" rows="10"></textarea> <br>
+		<input type="text" name="searchWord" placeholder="Enter Your Word"> <br>
+		<button type="button" onclick="findWord()">Search</button>
+	</form>
+
+	<h1 id="show"></h1>
+</body>
+</html>

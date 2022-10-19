@@ -1,0 +1,13 @@
+<?php 
+  session_start();
+  if(!isset($_SESSION['email'])){
+    header("Location:index.php");
+  }
+?>
+
+
+// Code goes to Other Like HTML ..........
+
+Show which User Logged in
+
+ <h1> <?php echo $_SESSION['name']?>! Welcome to Dashboard</h1>

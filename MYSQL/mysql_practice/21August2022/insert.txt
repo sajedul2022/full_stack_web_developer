@@ -1,0 +1,14 @@
+
+// insert values in table- students
+INSERT INTO students VALUES ('106','Aksah','akash@gmail.com','015689655')
+
+// multiple insert values in table- students
+INSERT INTO students VALUES 
+('107','Mahi','mahi@gmail.com','019689655'),
+('108','Zahid','zahid@gmail.com','017689655')
+
+// Delete values
+DELETE FROM students WHERE student_id=102;
+
+
+

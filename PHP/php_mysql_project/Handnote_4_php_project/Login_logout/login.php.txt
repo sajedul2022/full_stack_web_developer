@@ -1,0 +1,40 @@
+------------------------------------  Login Page: ------------------------------------------------------------
+
+<?php include("includes/db_config.php"); ?>
+
+<!-- Seesion Start -->
+<?php 
+  session_start();
+  if(isset($_SESSION['email'])){
+    header("Location:dashboard.php");
+  }
+?>
+
+
+<!--  database  check login users/password-->
+      <?php  
+        if(isset($_POST['login'])){
+            extract($_POST);
+            $pass = md5($password);
+
+            $sql = "SELECT * FROM users WHERE email = '$email'  AND password = '$pass' ";
+            $result  = $db->query($sql);
+
+            $row = $result->fetch_assoc();
+          
+            if($result->num_rows>0){
+
+              session_start();
+              $_SESSION['email'] = $row['email'];
+              $_SESSION['name'] = $row['name'];
+              $_SESSION['usertype'] = $row['usertype'];
+
+              header("Location:dashboard.php");
+
+            }else{
+              echo "<div class='alert alert-danger'> Email or Password is wrong! </div>";
+            }
+            
+
+        }
+      ?>

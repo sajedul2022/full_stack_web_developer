@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.notprime{
+			color: red;
+			font-size: 36px;
+		}
+
+		.prime{
+			color: green;
+			font-size: 36px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Find Prime Number</h1>
+
+	<script>
+		function primeNumber(n){
+			if(n == 1){
+				return "<div class='notprime'>" + n + "NOT Prime Number </div>";
+			}else if( n == 2){
+				return "<div class='prime'>" + n + " Prime Number </div>";
+			}else{
+				for(x=2; x<n; x++ ){
+					if(n%x == 0){
+					return "<div class='notprime'>" + n + " NOT Prime Number </div>";
+					}
+				}
+				return "<div class='prime'>" + n + " Prime Number </div>";
+			}
+		}
+
+		document.write(primeNumber(parseInt(prompt("Enter Number", ""))));
+	</script>
+
+	<!-- <script>
+		function myPrime (n){
+
+			if (n === 1) {
+				return n + " is Not a prime Number";
+			}else if(n === 2){
+				return n + " is a prime Number";
+
+			}else{
+				for( var x = 2; x < n; x++){
+					if(n % x === 0){
+						return n + " is Not a prime Number";
+
+
+					}
+
+				}
+
+				return n + " is  a prime Number";
+			}
+
+		}
+
+		var numberCheck = parseInt(prompt("Enter Number ", ""));
+
+		document.write(myPrime(numberCheck));
+	</script> -->
+
+
+	
+
+</body>
+</html>

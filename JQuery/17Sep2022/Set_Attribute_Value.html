@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="../jquery.min.js"></script>
+    <title>Jquery</title>
+
+    <script>
+
+        $(document).ready(function() {
+
+
+            // attr function
+            $("#btn1").click(function(){
+                $("img").attr("src", "sun.jpg");
+            })
+
+            $("#btn2").click(function(){
+                $("img").attr("src", "moon.jpg");
+            })
+
+            // Hover
+
+            // attr function
+            $("#img1").hover(function(){
+                $("img").attr("src", "sun.jpg");
+            })
+
+            $("#img1").mouseout(function(){
+                $("img").attr("src", "moon.jpg");
+            })
+
+        });
+
+    </script>
+        
+</head>
+
+<body>
+    
+   
+    <div>
+
+        <img id="img1" src="moon.jpg" alt="" width="200" height="200"> <br> <br>
+
+        <div id="divid"></div>
+        <button id="btn1"> Change </button>
+        <button id="btn2"> Previous  </button>
+    </div>
+        
+ 
+</body>
+</html>

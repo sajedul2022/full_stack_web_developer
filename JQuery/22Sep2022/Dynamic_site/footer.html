@@ -1,0 +1,36 @@
+
+
+<!-- <script type="text/javascript" src="../../jquery.min.js"></script> -->
+
+ 
+  <body>
+    <div class="div">
+      <a id="link1" href="#">About us |</a>  
+      <a id="link2" href="#">Contact | </a>  
+      <a id="link3" href="#">Service | </a>  
+      <a id="link4" href="#">Home</a> 
+    </div>
+
+
+    <script >
+        $(document).ready(function () {
+  
+          $("#link1").click(function () {
+            $("#content").load("about.html");
+          });
+  
+          $("#link2").click(function () {
+            $("#content").load("contact.html");
+          });
+  
+          $("#link3").click(function () {
+            $("#content").load("service.html");
+          });
+  
+          $("#link4").click(function () {
+            $("#content").load("home.html");
+          });
+          
+        });
+      </script>
+

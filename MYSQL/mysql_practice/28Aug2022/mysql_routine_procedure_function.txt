@@ -1,0 +1,70 @@
+// CREATE PROCEDURE statement
+
+DELIMITER $$
+
+CREATE PROCEDURE GetCustomers()
+BEGIN
+	SELECT 
+		customerName, 
+		city, 
+		state, 
+		postalCode, 
+		country
+	FROM
+		customers
+	ORDER BY customerName;    
+END$$
+DELIMITER ;
+
+// call PROCEDURE statement
+CALL GetCustomers();
+
+
+--------------------  PROCEDURE  WHERE statement--------------------
+DELIMITER &&  
+CREATE PROCEDURE get_merit_student()  
+BEGIN  
+    SELECT * FROM student_info WHERE marks > 70;  
+    SELECT COUNT(stud_code) AS Total_Student FROM student_info;    
+END &&  
+DELIMITER ; 
+
+
+// call PROCEDURE statement
+CALL  get_merit_student();
+--------------------------- Procedures with IN Parameter------------
+
+// Procedures with IN Parameter
+DELIMITER &&  
+CREATE PROCEDURE get_student(IN num INT)  
+BEGIN  
+    SELECT * FROM student_info LIMIT num;  
+    SELECT COUNT(stud_code) AS Total_Student FROM student_info;    
+END &&  
+DELIMITER ;  
+
+// call PROCEDURE statement
+CALL  get_student(5);
+
+--------------MySQL Transaction-----------------------------------------
+
+SET autocommit = 0;  
+
+
+
+START TRANSACTION;  
+
+INSERT INTO students   
+VALUES (105, 'Quyr Alexander', 'qty@gmail.com', '0152589545'); 
+
+INSERT INTO student_info   
+VALUES (NULL, '112','Sajedul20', 'Arabic', '25', '0152589545'); 
+
+
+INSERT INTO users
+VALUES (NULL, 'tyayle', 'tyayle@gmail.com', sha1('123')); 
+
+COMMIT; 
+
+// or ROLLBACK;  
+

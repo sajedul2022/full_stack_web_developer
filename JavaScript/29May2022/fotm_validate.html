@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<form name="myform">
+		Name: <br>
+		<input type="text" name="fullname" placeholder="Enter Name"> <br>
+		Email: <br>
+		<input type="email" name="email" placeholder="Enter Mail Address"> <br>
+		Phone Number : <br>
+		<input type="text" name="phone" placeholder="Enter Phone Number"> <br>
+		Gender: 
+		Male: <input type="radio" name="gender" value="Male"> 
+		Female: <input type="radio" name="gender" value="Female"> 
+		Other: <input type="radio" name="gender" value="Female"> <br>
+		Language: <select name="language" >
+			<option value="" disabled selected>Select Languages</option>
+			<option value="Bangla">Bangla</option>
+			<option value="English">English</option>
+		</select> <br>
+		Zip code: <br>
+		<input type="text" name="zip" placeholder="Enter Zip code"> <br>
+		<textarea name="address" id="" cols="30" rows="10" placeholder="Write About Yourself"></textarea> <br>
+		<input type="reset" value="RESET">
+		<input type="button" value="Register" onclick="validate()">
+
+	</form>
+
+
+	<script>
+		function validate(){
+
+			var fullname = document.myform.fullname.value;
+			var email = document.myform.email.value;
+			var phone = document.myform.phone.value;
+				phone += parseInt(phone);
+			var gender = document.myform.gender.value;
+			var language = document.myform.language.value;
+			var zip = document.myform.zip.value;
+				// zip = parseInt(zip);
+			var address = document.myform.address.value;
+
+			// alert(fullname);
+			
+			if(fullname==""){
+					alert("Enter Full name");
+				} else if(email==""){
+					alert("Enter Valid Email Address");
+				} else if(phone=="" ){
+					alert("Enter Full Phone");
+				}else if(gender==""){
+					alert("Select Gender");
+				}else if(language==""){
+					alert("Select language");
+				}else if(zip==""){
+					alert("Enter zip");
+				}else if(address==""){
+					alert("Enter Full address");
+				}else{
+				alert("All are validate");
+				}
+
+			
+			}
+
+
+	</script>
+
+	
+	
+</body>
+</html>

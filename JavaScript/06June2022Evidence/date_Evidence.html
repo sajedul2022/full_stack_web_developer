@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		function showDate(){
+			var mydate = document.myform.mydate.value;
+			var d = new Date(mydate);
+			var week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+			var myday = week[d.getDay()];
+
+			alert(myday);
+
+		}
+	</script>
+
+	<form name="myform">
+		<input type="date" name="mydate"> <br>
+		<input type="button" value="SHOW" onclick="showDate()">
+	</form>
+</body>
+</html>

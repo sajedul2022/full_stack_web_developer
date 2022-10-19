@@ -1,0 +1,4 @@
+1, Rabbany, 51 ,pass
+2, Dipu, 50, fail
+3, Sajedul, 51, pass
+

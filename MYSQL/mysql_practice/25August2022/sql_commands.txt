@@ -1,0 +1,52 @@
+// login
+ mysql -h localhost -u root -p
+
+ // access new user
+ mysql -h localhost -u sajedul -p
+
+// Create User 
+create user 'sazid'@'localhost' identified by 'abcd';
+
+// drop or delete user 
+drop user 'sajedul'@'localhost';
+
+
+
+//exit 
+ exit
+
+// Rename user
+rename user 'sazid'@'localhost' TO 'sazid01'@'localhost';
+rename user 'sazid01'@'localhost' TO 'sazid'@'localhost';
+
+// cls - clear code shell
+cls 
+
+// grant previllages set 
+grant select on wdpf51.* to 'sajedul'@'localhost';
+grant insert,delete,update on wdpf51.* to 'sajedul'@'localhost';
+
+// show databases
+show databases;
+
+//use database
+use wdpf51;
+
+// show tables
+show tables;
+
+
+// show table featured 
+describe products;
+
+// select data from table 
+select * from users;
+
+//insert data
+insert into products values(NULL, 'shirt201', 'Blue Shirt', '', '500');
+
+// revoke or remove role previllage from user role
+revoke insert on wdpf51.* from 'sajedul'@'localhost';
+
+
+

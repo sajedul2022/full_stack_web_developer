@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		var a = parseInt(prompt("Enter 1st Number",""));
+		var b = parseInt(prompt("Enter 2nd Number",""));
+		var c = parseInt(prompt("Enter 3rd Number",""));
+
+		function maxNumber(){
+				if(a>b && a>c){
+				document.write(a + " is the Maximum Number.");
+
+			}else if(b>a && b>c){
+				document.write(b + " is the Maximum Number.");
+			}else{
+				document.write(c + " is the Maximum Number.");
+			}
+		}
+
+		maxNumber();
+
+	</script>
+</body>
+</html>

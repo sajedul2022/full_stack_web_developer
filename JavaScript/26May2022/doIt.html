@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body onload="window.document.form1.reset()">
+
+	<form action="" name="form1">
+		<input type="text" name="fullname" value="Enter name"> <br>
+		<input type="button" name="submit" value="Click Here" onclick="doIt()"> <br>
+		
+	</form>
+
+	<script>
+		function doIt(){
+			document.form1.fullname.value= "Dipu";
+			document.form1.submit.value= "You have clicked!";
+
+		}
+	</script>
+
+</body>
+</html>

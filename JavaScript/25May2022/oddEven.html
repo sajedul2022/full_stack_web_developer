@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="show"></h1>
+
+	<script>
+
+		function oddEven(){
+		var numbers = parseInt(prompt("Enter Any Number", ""));
+		var output = "";
+
+			if(numbers % 2 == 0){
+				output = numbers + " is a Even Number";
+			// document.getElementById("show").innerHTML = output;
+			document.getElementById("show").innerHTML = numbers + " is a Even Number";
+
+
+			}else{
+				output = numbers + " is a ODD Number";
+			// document.getElementById("show").innerHTML = output;
+			document.getElementById("show").innerHTML = numbers + " is a ODD Number";
+
+
+			}	
+			// document.getElementById("show").innerHTML = output;
+
+		}
+
+		oddEven();
+
+	</script>
+
+	
+</body>
+</html>

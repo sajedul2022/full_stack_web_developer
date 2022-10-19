@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+		function sum(x,y){
+
+			var x = prompt("Enter 1st Number", "");
+			var y = prompt("Enter 2nd Number", "");
+
+			var num1 = parseInt(x);
+			var num2 = parseInt(y);
+
+			var add = num1 + num2;
+			 // alert(add);
+			 // return add;
+
+			document.getElementById('display').innerHTML = add;
+
+		}
+
+	</script>
+
+	<button onclick="sum()"> Click Here </button>
+
+	<h1 id="display"> Total Number is</h1>
+
+</body>
+</html>

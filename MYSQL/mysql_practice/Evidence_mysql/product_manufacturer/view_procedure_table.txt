@@ -1,0 +1,23 @@
+------------------------Solution  Hints for Evidence:01 -----------------------------------
+
+// CREATE TABLE
+CREATE TABLE product
+CREATE TABLE manufacturer 
+
+///////////////  create view ////////////////////
+CREATE VIEW product_info_view AS
+SELECT p.id, m.name AS manufacturer_name, p.name, p.price FROM  product p, manufacturer m WHERE m.id =p.manufacturer_id AND p.price > 5000;
+
+-------------------------Crate file for -----------------------------------
+
+// trigger delete manufacturer any name - delete automatically delete from  product table
+
+DELETE FROM product WHERE manufacturer_id = OLD.id
+
+---- Create table view--------
+
+CREATE VIEW PRODUCT_INFO_VIEW AS
+SELECT P.id 
+
+------------- create Rotine Procedure by graphical view -------------
+INSERT INTO manufacturer VALUES(NULL,m_name,m_address,m_contact)

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+
+		var onlyGlobal = "This variable is only Global";
+		var localGlobal = "I am now Global";
+
+		function showMe(){
+				var localGlobal = "I am now Local";
+				var onlyLocal = "Only Local Local";
+
+				alert(localGlobal + "----" + onlyLocal);
+
+		}
+
+		showMe();
+
+		 document.write(onlyGlobal + "===" + localGlobal);
+
+		 alert(onlyGlobal);
+
+	</script>
+	
+</body>
+</html>

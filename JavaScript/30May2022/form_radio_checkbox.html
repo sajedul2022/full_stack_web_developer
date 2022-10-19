@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	
+
+	<script>
+		function radioCheck(){
+			var hardware = document.hardware;
+			var display = "Your Answer is: \n";
+
+			for(var i=0; i<hardware.length; i++){
+
+				if(hardware.elements[i].checked==true){
+					display += hardware.elements[i].value +"\n";
+					
+				}
+
+				// if(hardware.elements[i].checked==false){
+				// 	display += hardware.elements[i].value +"\n";
+					
+				// }
+
+			}
+
+			hardware.answer.value = display;
+
+			document.getElementById("show").innerHTML = display;
+		}
+
+	</script>
+
+	<form name="hardware">
+
+		Pick one of the following:  <br>
+		<input type="radio" name="harlist" value="Cost"> Cost  <br>
+		<input type="radio" name="harlist" value="Reliability"> Reliability  <br>
+		<input type="radio" name="harlist" value="Reputation"> Reputation  <br>
+		<input type="radio" name="harlist" value="Ease of Use"> Ease of Use  <br>
+
+		Select plan to purchase: <br>
+		<input type="checkbox" name="buy" value="Printers"> Printers  <br>
+		<input type="checkbox" name="buy2" value="High capacity Disk"> High capacity Disk  <br>
+		<input type="checkbox" name="buy3" value="Scanner"> Scanner  <br>
+		<input type="checkbox" name="buy4" value="Additional Memory"> Additional Memory  <br><br>
+		<input type="button" onclick="radioCheck()" value="Check It Out"> <br> <br>
+
+		Your Result: <br>
+		<textarea name="answer" id="" cols="30" rows="10"> </textarea>
+
+	</form>
+
+
+	<h1 id="show"></h1>
+
+	
+</body>
+</html>

@@ -1,0 +1,18 @@
+ <!-- Update  SET Query   Databaase -->
+                
+
+	 include_once("includes/db_config.php");
+                  extract($_POST);
+
+                  $id = $_GET['id'];
+                  $sql = "UPDATE products SET pid='$id',pname='$pname',pdetails='$pdetails',pprice='$pprice',pthumb='$pthumb',manu_id='$manu_id' WHERE pid = '$id'";
+                  $db->query($sql);
+                  if($db->affected_rows>0){
+                    echo "<div class='alert alert-success'> Product Update Successfully. </div>";
+                  }else{
+                    echo "<div class='alert alert-danger'> Try Again. </div>";
+                  }
+
+
+  --- Code Goes to ..... 
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="../jquery.min.js"></script>
+    <title>Jquery</title>
+
+    <style type="text/css">
+      ul {
+        background-color: #dcdcdc;
+        list-style: none;
+        margin: 0pt;
+        padding: 0pt;
+        width: 350px;
+      }
+      li {
+        padding: 10px;
+      }
+    </style>
+
+    <script>
+            $(document).ready(function () {
+
+                $('#handle').click(function(){
+                    if($(this).attr('checked') == true)
+                    $('.toggle').attr('checked', 'true');
+                    else
+                    $('.toggle').removeAttr('checked');
+                });
+
+                $('.toggle').click(function(){
+                    if($('.toggle:checked').length == $('.toggle').length)
+                    $('#handle').attr('checked', 'true');
+                    if($('.toggle:checked').length < $('.toggle').length)
+                    $('#handle').removeAttr('checked');
+
+                });
+
+                $('#getValue').click(function(){
+                    var values = '';
+                    if($('.toggle:checked').length)
+                    {
+                    $('.toggle:checked').each(function(){
+                    values+= $(this).next('label').html() + ' ,';
+                    });
+                    $('#selected').html('Selected values are: ' + values);
+                    }
+                    else
+                    $('#selected').html('Nothing selected');
+                });
+
+
+            });
+    </script>
+  </head>
+
+  <body>
+    <ul>
+      <form action="">
+
+        <li>
+            <input type="checkbox" name="check" value="select" id="handle" />
+            <label for="handle"> <strong>Toggle All</strong></label>
+          </li>
+          <li>
+            <input type="checkbox" class="toggle" />
+            <label>A Study in Scarlet</label>
+          </li>
+          <li>
+            <input type="checkbox" class="toggle" />
+            <label>The Sign of the Four</label>
+          </li>
+          <li>
+            <input type="checkbox" class="toggle" />
+            <label>The Adventures of Sherlock Holmes</label>
+          </li>
+          <li>
+            <input type="checkbox" class="toggle" />
+            <label>The Valley of Fear</label>
+          </li>
+          <li>
+            <input type="checkbox" class="toggle" />
+            <label>His Last Bow</label>
+          </li>
+          <li><input type="button" id="getValue" value="Get Selected Values" /></li>
+          <li id="selected"></li>
+          
+      </form>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>the title</title>
+        <script type="text/javascript" src="../jquery.min.js"> </script>
+        <script type="text/javascript" language="javascript">
+
+            $(document).ready(function() {
+                var h = $(".box1").height();
+                var w = $(".box1").width();
+                var ih = $(".box1").innerHeight();
+                var iw = $(".box1").innerWidth();
+
+                var oh = $(".box1").outerHeight(true);
+                var ow = $(".box1").outerWidth(true);
+
+                    h = "<br>" + "Height: " + h + "<br>";
+                    w = "Width: " + w + "<br>";
+                    ih = "Inner Height: " + ih + "<br>";
+                    iw = "Inner Width: " + iw + "<br>";
+                    oh = "Outer Height: " + oh + "<br>";
+                    ow = "Outer Width: " + ow + "<br>";
+                var output = h + w + ih + iw + oh + ow;
+                
+                $(".box2").html(output);
+                
+
+                // alert("Height: " + h + " Width: " + w);
+            });
+
+        </script>
+
+        <style>
+            .box1{ 
+                width:100px; 
+                height:100px; 
+                margin:5px;
+                padding: 10px;
+                border: 15px solid green;
+                background:red; 
+                cursor:pointer; 
+                }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="box1"> </div>
+
+        <div class="box2"> The Result is-  </div>
+
+
+    </body>
+</html>

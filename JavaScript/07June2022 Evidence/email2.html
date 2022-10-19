@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var takedata = prompt("Enter Mail Address", "");
+
+		var email = takedata.search(/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/);
+
+		function emailvalidate(email){
+
+			if(email==-1){
+				alert("Invalid Email Address");
+			}else{
+				alert("All are validated ");
+			}
+
+
+		}
+
+		emailvalidate(email);
+
+	</script>
+</body>
+</html>

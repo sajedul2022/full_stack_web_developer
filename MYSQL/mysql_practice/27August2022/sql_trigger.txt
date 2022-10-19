@@ -1,0 +1,64 @@
+***************************
+// Create trigger
+create table: students_table_log
+Fields: id,student_id,student_name, student_email, student_phone, action, action_time
+
+for which table: students
+------------------------------------------------------
+** INSERT INTO || after_student_enty   **
+
+DELIMITER //
+CREATE TRIGGER after_student_enty
+AFTER INSERT ON students
+FOR EACH ROW
+BEGIN
+INSERT INTO students_table_log VALUES(NULL,NEW.student_id,NEW.student_name,NEW.student_email,NEW.student_phone,  'INSERT', current_timestamp());
+END //
+
+DELIMITER ;
+------------------------------------------------
+// trigger student table edit
+BEGIN
+INSERT INTO students_table_log VALUES(NULL,NEW.student_id,NEW.student_name,NEW.student_email,NEW.student_phone,  'INSERT', current_timestamp());
+END 
+
+------------------------------------------------------------
+
+** UPDATE OLD data || after_student_update   **
+
+DELIMITER //
+CREATE TRIGGER after_student_update
+AFTER UPDATE ON students
+FOR EACH ROW
+BEGIN
+INSERT INTO students_table_log VALUES (NULL,OLD.student_id,OLD.student_name,OLD.student_email,OLD.student_phone, 'UPDATE', current_timestamp());
+END //
+
+DELIMITER ;
+
+** UPDATE NEW data || after_student_update   **
+
+DELIMITER //
+CREATE TRIGGER after_student_update
+AFTER UPDATE ON students
+FOR EACH ROW
+BEGIN
+INSERT INTO students_table_log VALUES (NULL,NEW.student_id,NEW.student_name,NEW.student_email,NEW.student_phone, 'UPDATE', current_timestamp());
+END //
+
+DELIMITER ;
+
+---------------------------------------------------------------
+** DELETE OLD data || after_student_delete   **
+
+DELIMITER //
+CREATE TRIGGER after_student_delete
+BEFORE DELETE ON students
+FOR EACH ROW
+BEGIN
+INSERT INTO students_table_log VALUES (NULL,OLD.student_id,OLD.student_name,OLD.student_email,OLD.student_phone, 'DELETE', current_timestamp());
+END //
+
+DELIMITER ;
+
+

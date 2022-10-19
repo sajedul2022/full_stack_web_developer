@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+		function validate(){
+			var fname = document.myFrom.fname.value;
+			var email = document.myFrom.email.value;
+			var remarks = document.myFrom.remarks.value;
+			var location = document.myFrom.location.value;
+
+			var display = "Information : <br> ";
+			display += fname + "<br>" + email + "<br>"+ remarks + "<br>"+ location +"<br>";
+
+			var items = document.getElementsByTagName("input"); // Ant html tag
+
+			for(var i=0; i<items.length; i++){
+
+				if(items[i].checked){
+					display += items[i].value +"\n";
+					
+				}
+
+			}
+
+			alert(display);
+
+
+			if(fname==""){
+				alert("Fill Up name");
+				return false;
+
+			}else{
+				alert("Thanks, Your Data Submitted");
+				return true;
+
+			}
+
+			// document.myFrom.answer.value = display;
+
+
+			// document.getElementById("show").innerHTML = display;
+			display = document.getElementById("show").innerHTML;
+
+
+
+		}
+	</script>
+	
+
+
+	<h1>Trainee's Data</h1>
+
+
+	<form name="myFrom" action="form_radio_checkbox1.html" onsubmit="return true">
+		Name <br>
+		<input type="text" name="fname" placeholder="Enter Name"> <br>
+		Contact <br>
+		<input type="email" name="email" placeholder="Enter Email"> <br>
+		Remarks <br>
+		<textarea name="remarks" placeholder="Write Remarks" cols="30" rows="10"></textarea> <br>
+		Sex: <input type="radio" name="gender" value="Male"> Male 
+		<input type="radio" name="gender" value="Female "> Female  <br>
+		Select Courses: <br>
+		<input type="checkbox" name="Course1" value="NT">NT <br>
+		<input type="checkbox" name="Course2" value="IAD">IAD <br>
+		<input type="checkbox" name="Course3" value="DDD">DDD <br>
+		<input type="checkbox" name="Course4" value="ESAD">ESAD <br>
+		Select Location 
+		<select name="location" id="">
+			<option value="" disabled="" selected="">Select location</option>
+			<option value="Mirpur">Mirpur</option>
+			<option value="Banani">Banani</option>
+			<option value="Dhanmondhi">Dhanmondhi</option>
+		</select> <br> <br>
+		<input type="button" value="SUBMIT" onclick="validate()"> <br>
+
+	
+		
+	</form>
+
+	<h1></h1>
+
+
+
+	<h1 id="show"></h1>
+
+	
+</body>
+</html>

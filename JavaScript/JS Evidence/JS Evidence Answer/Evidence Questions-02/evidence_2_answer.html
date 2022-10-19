@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<h1>Evidence 2 Question No 1</h1>
+	
+	<script>
+		function prime_check(n){
+			if(n==1){
+				return "<div class='notprime'>" +  n + " is not a prime number</div>";
+			} else if(n==2) {
+				return "<div class='prime'>" +  n + " is a prime number</div>";
+			} else {
+				for(var i=2; i<n; i++){
+					if(n % i ==0){
+						return "<div class='notprime'>" +  n + " is not a prime number</div>";
+					}
+				}
+				return "<div class='prime'>" +  n + " is a prime number</div>";
+			}
+		}
+
+		document.write(prime_check(prompt("Enter Number")));	
+		
+	</script>
+
+
+
+	<h1>Evidence 2 Question No 2</h1>
+
+	<form name="myform">
+		Email: <br>
+		<input type="email" name="email" placeholder="Enter your email"> <br>
+		Password: <br>
+		<input type="password" name="pass" placeholder="Enter your Password"> <br>
+		<input type="button" onclick="validate()" value="Login">
+	</form>
+
+
+	<script>
+		function validate(){
+			var email = document.myform.email.value;
+			var password = document.myform.pass.value.length;
+			var veryfidemail = email.search(/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/);
+			var status = false;
+			if(veryfidemail==-1){
+				alert("Your email invalid");
+				return false;
+			} else if(password<6){
+				alert("Your password must be 6 charectar");
+				return false;
+			} else{
+				status = true;
+			}
+			if(status==true){
+				alert("All are validate");
+			}
+		}
+	</script>
+
+
+
+	<h1>Evidence 2 Question No 3</h1>
+
+	<form name="myform">
+		Student ID: <br>
+		<input type="text" name="id" placeholder=""> <br>
+		Name: <br>
+		<input type="text" name="name" placeholder=""> <br>
+		Course: <br>
+		<input type="text" name="course"> <br> 
+		Year/Section: <br>
+		<input type="text" name="year"> <p> 		
+		<input type="button" onclick="func()" value="SUBMIT">
+		<input type="button" onclick="mywin.close()" value="Close">
+
+	</form>
+
+	<script>
+		var mywin;
+		function func(){
+			var stdid= document.myform.id.value;
+			var name= document.myform.name.value;
+			var course= document.myform.course.value;
+			var year= document.myform.year.value;
+
+			var display;
+			if(stdid==""){
+				alert("Fillup Student Id");
+			} else if(name==""){
+				alert("Fillup Student Name");
+			} else if(course==""){
+				alert("Fillup course");
+			} else if(year==""){
+				alert("Fillup year");
+			} else{
+				alert("All are submitted");
+			}
+
+				display = "Student ID:" + stdid + "<br>";
+				display += "Name:" + name + "<br>";
+				display += "Course:" + course + "<br>";
+				display += "Year:" + year + "<br>";
+				mywin = window.open("","","width=300, height=300, top=200, left=400");
+				mywin.document.write(display);
+		}
+	</script>
+	
+</body>
+</html>

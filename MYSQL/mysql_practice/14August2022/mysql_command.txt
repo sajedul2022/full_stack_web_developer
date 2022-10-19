@@ -1,0 +1,32 @@
+## mysql database connection ##
+
+mysql -h localhost -u root -p
+
+## To see all databases;
+show databases;
+
+
+## see All columns from a table
+select * from employees;
+
+## specify selecterd column show 
+SELECT employeeNumber, lastName, firstName FROM employees;
+
+##MySQL ORDER BY clause
+SELECT employeeNumber, lastName, firstName FROM employees ORDER BY lastName DESC
+SELECT employeeNumber, lastName, firstName FROM employees ORDER BY lastName ASC
+
+##Condition WHERE clause OR
+SELECT employeeNumber, lastName, firstName, officeCode FROM employees WHERE officeCode = 4;
+SELECT employeeNumber, lastName, firstName, officeCode FROM employees WHERE officeCode <3;
+SELECT employeeNumber, lastName, firstName, officeCode FROM employees WHERE officeCode = 3 OR officeCode = 5;
+SELECT employeeNumber, lastName, firstName, officeCode FROM employees WHERE officeCode IN(3,5);
+
+## Condition WHERE clause AND 
+SELECT firstName, lastName, officeCode, jobTitle FROM employees WHERE officeCode = 1 AND jobTitle = "Sales Rep";
+SELECT firstName, lastName, officeCode, jobTitle FROM employees WHERE officeCode IN(3,5) AND jobTitle = "Sales Rep";
+
+## DISTINCT unique not duplicate
+SELECT DISTINCT country FROM customers;
+SELECT DISTINCT country FROM customers ORDER BY `customers`.`country` ASC;
+SELECT DISTINCT country, customerName ,customerNumber,phone, city FROM customers ORDER BY customerName;

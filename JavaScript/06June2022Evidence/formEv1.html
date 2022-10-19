@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<h1>Product Information</h1>
+
+
+	<form name="myForm">
+		Product Name <br>
+		<input type="text" name="pname" placeholder="Enter Product Name"> <br>
+		
+		Product Details <br>
+		<textarea name="pdetails" placeholder="Write Product Details" cols="30" rows="10"></textarea> <br>
+		Type Product <br>
+		<input type="radio" name="ptype" value="Brand New"> Brand New 
+		<input type="radio" name="ptype" value="Secound Hand "> Secound Hand  
+		<input type="radio" name="ptype" value=" Refurbished ">  Refurbished  <br>
+		Select Categories: <br>
+		<input type="checkbox"  class="categorie" value="Shirt">Shirt <br>
+		<input type="checkbox"  class="categorie" value="Trouser">Trouser <br>
+		<input type="checkbox"  class="categorie" value="Pullover">Pullover <br>
+		<input type="checkbox"  class="categorie" value="Sweater">Sweater <br> <br>
+		
+		<input type="button" value="SUBMIT" onclick="alldata()"> <br> <br>
+
+		<input type="button" value="Close Window" onclick="mywin.close();"> <br>
+
+	
+		
+	</form>
+<script>
+
+		var mywin;
+
+
+		function alldata(){
+			var pname = document.myForm.pname.value;
+			var pdetails = document.myForm.pdetails.value;
+			var ptype = document.myForm.ptype.value;
+
+			var categories = document.getElementsByClassName("categorie");
+			var outputProducts = "<h4> Selected Categories Products: </h4>";
+
+			for(var i=0; i<categories.length; i++){
+				if(categories[i].checked){
+					outputProducts += categories[i].value +"<br>";
+				}
+			}
+
+
+
+			var display = "<h1> Products All Information: </h1>";
+				display += "Product Name: " + pname + "<br>";
+				display += "Product Details: " + pdetails + "<br>";
+				display += "Product Type:  " + ptype + "<br>";
+				display +=  outputProducts + "<br>";
+
+
+			 mywin = window.open("","","width=500, height=400, top=200, left=400");
+			  	mywin.document.write(display);
+
+		}
+		
+
+	</script>
+	
+</body>
+</html>

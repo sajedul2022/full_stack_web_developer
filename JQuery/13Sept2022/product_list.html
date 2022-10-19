@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- <input type="text" value="" id="batch"> -->
+    <select name="" id="batch">
+        <option value="">Select one</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+    </select>
+
+    <!-- <button id="btn1">Click Here</button> -->
+    <h2>Student list</h2>
+    <div id="list"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#batch").change(function(){
+                var x = $("#batch").val();
+
+                $.get('get_data.php',{id:x},  function(data, status){
+                $("#list").html(data)
+            });
+            });
+            
+           
+        });
+    </script>
+    
+</body>
+</html>

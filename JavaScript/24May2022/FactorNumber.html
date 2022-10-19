@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Calculate Factorial</h2>
+
+	<script>
+		function factorial(x){
+			if(x == 0){
+				return 1;
+
+			}
+			return x * factorial(x-1); // created function executed in within this function thats called curse or Repeated Function.
+
+		}
+
+		document.write("Factorial Number is : " + factorial(prompt("Enter Number", "")));
+	</script>
+</body>
+</html>

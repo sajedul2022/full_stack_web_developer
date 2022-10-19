@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js" ></script>
+
+    <script>
+        $(document).ready(function () {
+            $('div#masterList').find('li')
+                .width(500).addClass('selected')
+        });
+    </script>
+
+    <style>
+        li.selected {
+            background-color: green;
+            border: 3px solid red;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="masterList">
+        <ul>
+            <li>Wdpf</li>
+            <li>JEE</li>
+        </ul>
+    </div>
+
+    <ul>
+        <li>GAVE</li>
+        <li>DDD</li>
+    </ul>
+</body>
+</html>

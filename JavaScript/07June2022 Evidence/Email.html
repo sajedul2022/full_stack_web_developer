@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<form name="myform">
+		Email <br> <input type="email" name="email" placeholder="Enter Email"> <br>
+		Password <br> <input type="password" name="pass" placeholder="Enter Password"> <br>
+		<input type="button" onclick="validate()" value="Login">
+	</form>
+
+	<script>
+		function validate(){
+			var email = document.myform.email.value;
+			var pass = document.myform.pass.value.length;
+
+		 	var varifyEmail = email.search(/^[a-zA-Z]+@[a-zA-z]+\.[a-zA-z]{2,3}$/);
+			var status = false;
+
+
+			if (varifyEmail==-1) {
+				alert("Enter valid Email");
+				return false;
+			}else if(pass<6){
+				alert("Set Al least 6 character For passsword");
+				return false;
+
+			}else{
+
+				 status = true;
+			}
+
+			if(status == true){
+				alert("All are validate");
+				// return true;
+			}
+		}
+	</script>
+
+	
+</body>
+</html>

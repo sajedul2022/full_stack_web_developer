@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Billing Information</h1>
+
+	<form name="myform">
+		First Name <br> <input type="text" name="fname" placeholder="Enter First Name"> <br>
+		Last Name <br> <input type="text" name="lname" placeholder="Enter Last Name"> <br>
+		gender : <input type="radio" name="gender" value="Male"> Male
+		         <input type="radio" name="gender" value="Female"> Female <br>
+		Languages <br> <input type="checkbox" class="lang" value="Telegu"> Telegu
+                        <input type="checkbox" class="lang" value="English">	English	 
+                        <input type="checkbox" class="lang" value="Bangla">	Bangla	 
+                        <input type="checkbox" class="lang" value="Hindi">	Hindi	<br>
+		Email <br> <input type="text" name="email" placeholder="Enter Email"> <br>
+		Address <br> <textarea name="address"  cols="30" rows="10" placeholder="Enter Address"></textarea> <br>
+		State <br>
+		<select name="state" >
+			<option value="" disabled="" selected="">Choose State</option>
+			<option value="Bangladesh">Bangladesh</option>
+			<option value="India">India</option>
+			<option value="Srilanka">Srilanka</option>
+		</select> <br>
+		Zip <br> <input type="text" name="zip" placeholder="Enter Zip"> <br>
+
+		Credit Card Type <br>
+		<select name="card" >
+			<option value="" disabled="" selected="">Choose Credit Card</option>
+			<option value="Debit Card">Debit Card</option>
+			<option value="Credit Card">Credit Card</option>
+			<option value="Cash">Cash</option>
+		</select> <br> <br>
+
+		<input type="button" value="Submit" onclick="billInfo()"> 
+		<input type="button" value="Close" onclick="mywin.close()"> <br>
+
+
+
+
+
+	</form>
+
+	<script>
+		var mywin;
+		function  billInfo(){
+
+		var fname = document.myform.fname.value;
+		var lname = document.myform.lname.value;
+		var gender = document.myform.gender.value;
+		var email = document.myform.email.value;
+		var address = document.myform.address.value;
+		var state = document.myform.state.value;
+		var zip = document.myform.zip.value;
+		var card = document.myform.card.value;
+
+		var language = document.getElementsByClassName("lang");
+		var Alllanguages = "Selected Language: <br> ";
+
+
+		for(var i=0;i<language.length; i++){
+				if(language[i].checked){
+					Alllanguages += language[i].value + ", ";
+				}
+			}
+
+
+		var display = "";
+			display += "First name: " + fname + "<br>";
+			display += "Last name: " + lname + "<br>";
+			display += "Gender: " + gender + "<br>";
+			display += "Email: " + email + "<br>";
+			display += "Address: " + address + "<br>";
+			display += "State: " + state + "<br>";
+			display += "Zip: " + zip + "<br>";
+			display += "Card name: " + card + "<br>";
+			display += "Languages: " + Alllanguages + "<br>";
+
+			mywin = window.open("","","width=400, height=300, top=200, left=400");
+
+			mywin.document.write(display);
+
+
+
+	}
+
+	</script>
+</body>
+</html>

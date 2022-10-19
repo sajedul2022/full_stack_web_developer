@@ -1,0 +1,28 @@
+
+---------- 01. // CREATE TABLE ----------------
+CREATE TABLE manufacturer 
+CREATE TABLE product
+
+
+----------  02. Procedure by graphical view -------------
+
+INSERT INTO manufacturer VALUES(NULL,m_name,m_address,m_contact)
+
+
+
+---------- 03. trigger  -----------------------------------
+
+// trigger delete manufacturer any name - delete automatically delete from  product table
+
+DELETE FROM product WHERE manufacturer_id = OLD.id
+
+
+
+-------- 04.  create view ---------------------------------------
+CREATE VIEW product_info_view AS
+SELECT p.id, m.name AS manufacturer_name, p.name, p.price FROM  product p, manufacturer m WHERE m.id =p.manufacturer_id AND p.price > 5000;
+
+
+
+
+

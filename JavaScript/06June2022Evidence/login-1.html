@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		function validate(){
+			var username = document.myform.username.value.length;
+			var pass = document.myform.pass.value.length;
+
+			var status = false;
+
+			if(username <= 5){
+				alert("Set at least 6 Character for UserName");
+				return false;
+			}else{
+				status = true;
+			}
+
+
+			if(pass<=7){
+				alert("Set at least 8 Character for Password");
+				return false;
+			}else{
+				status = true;
+			}
+
+
+			if(status == true ){
+				alert("All data are validated");
+			}
+
+
+		}
+	</script>
+	<form name="myform">
+		 <input type="text" name="username" placeholder="Enter Username"> <br>
+		 <input type="password" name="pass" placeholder="Enter password "> <br>
+
+		 <input type="button" value="SEND" onclick="validate()">
+	</form>
+
+	
+</body>
+</html>

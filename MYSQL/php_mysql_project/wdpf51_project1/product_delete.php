@@ -1,0 +1,15 @@
+<?php 
+    // db connection
+    include("includes/db_config.php");
+    $id = $_GET['id'];
+
+    $sql = "DELETE FROM products WHERE pid = '$id'";
+    $db->query($sql);
+
+    if($db->affected_rows>0){
+        header("Location:products.php");
+        // echo "Deleted.";
+    }
+
+
+?>

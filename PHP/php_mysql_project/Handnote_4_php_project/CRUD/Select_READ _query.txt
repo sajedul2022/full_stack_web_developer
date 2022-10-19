@@ -1,0 +1,14 @@
+ <!-- Select/ READ Query   Into Databaase -->
+                <?php 
+                    $id = $_GET['id'];
+                    $sql = "SELECT * FROM products WHERE pid = '$id'";
+                    $result = $db->query($sql);
+
+	echo "<h2>Total Record found $result->num_rows </h2>";
+
+                    $row = $result->fetch_assoc();
+                    echo $row['manu_id'];
+             	?>
+
+  --- Code Goes to ..... 
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script>
+		 
+		 function func3(){
+		 	// var fast = document.getElementById('fastname').value;
+		 	var fast = document.myform.fastname.value;
+		 	document.getElementById('show').innerHTML = fast;
+		 	// document.getElementById('show').innerHTML = fast;
+
+		 }
+
+		
+
+	</script>
+
+	<form action="" name="myform">
+
+	<input type="text" value="" name="fastname"> 
+
+	<button type="button" onclick="func3()">Click Here</button>
+
+	</form>
+
+	<h1 id="show"> </h1>
+
+		
+</body>
+</html>

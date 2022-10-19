@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="../jquery.min.js"></script>
+    <title>Jquery</title>
+    <script>
+        $(document).ready(function() {
+          
+            $(".btn1").click(function(){
+                $(".country").prepend("<li> Prepend Item</li>");
+            })
+
+            $(".btn2").click(function(){
+                $(".country").append("<li> Append Item</li>");
+            })
+            
+            
+        
+            
+        });
+    </script>
+
+</head>
+
+<body>
+      
+    <ul class="country"> 
+        <li>Add Item</li>
+    </ul>
+
+    <button class="btn1"> Before </button>
+    <button class="btn2"> After </button>
+    
+
+</body>
+</html>

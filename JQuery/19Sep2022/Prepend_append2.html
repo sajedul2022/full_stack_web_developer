@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="../jquery.min.js"></script>
+    <title>Jquery</title>
+    <script>
+      $(document).ready(function () {
+        $(".btn1").click(function () {
+          $(".myform").prepend(
+            " <br> <input class='remove' type='text' placeholder='prepend  New Name'>  <br>"
+          );
+
+          // $("#btn3").click(function(){
+          //     $(".remove").remove();
+          // })
+        });
+
+        $(".btn2").click(function () {
+          $(".myform").append(
+            " <br> <input type='text' placeholder='Append New Name'><br>"
+          );
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <form action="" method="post" class="myform">
+      <br />
+      <input type="text" placeholder="Enter Name" /> <br />
+    </form>
+
+    <br /><button class="btn1">Before New</button>
+    <button class="btn2">After New</button>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+
+
+02. ** Create delete trigger sql form PHP 
+DELETE FROM student WHERE  id = $st_show
+
+** Create delete trigger sql  graphical procedure
+DELETE FROM result WHERE  student_id = old.id
+
+
+03. // create  procedure 
+CREATE PROCEDURE  add_student
+
+INSERT INTO student VALUES (NULL,st_name,address,mobile)   // [ from graphical procedure Execute ]
+
+
+
+04. // create view 
+CREATE VIEW students_records AS
+SELECT rid, st_name,module_name, totalmarks,address FROM result r, student s WHERE s.id = r.student_id;
+
+

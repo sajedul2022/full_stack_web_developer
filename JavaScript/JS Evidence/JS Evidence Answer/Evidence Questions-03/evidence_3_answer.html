@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<h1>Evidence 3 Question No 1</h1>
+
+	<!-- <form name="myForm">
+		Name <br>
+		<input type="text" name="fname" placeholder="Enter Name"> <br>
+		Contact <br>
+		<input type="email" name="email" placeholder="Enter Email"> <br>
+		Sex: <input type="radio" name="gender" value="Male"> Male 
+		<input type="radio" name="gender" value="Female "> Female  <br>
+		Select Courses: <br>
+		<input type="checkbox" class="course" value="NT">NT <br>
+		<input type="checkbox" class="course" value="IAD">IAD <br>
+		<input type="checkbox" class="course" value="DDD">DDD <br>
+		<input type="checkbox" class="course" value="ESAD">ESAD <br>
+		Select Location <br>
+		<select name="location">
+			<option value="" disabled selected>Select a location</option>		
+			<option value="Banani">Banani</option>
+			<option value="Dhanmondhi">Dhanmondhi</option>
+			<option value="Mirpur">Mirpur</option>
+		</select> <br> <br>
+		<input type="button" value="SUBMIT" onclick="alldata()"> <br>
+	</form>
+
+	<script>
+		function alldata(){
+			var fname = document.myForm.fname.value;
+			var email = document.myForm.email.value;		
+			var gender = document.myForm.gender.value;			
+			var courses = document.getElementsByClassName("course");
+			var selectedCourses = "Selected Courses: ";
+			var location = document.myForm.location.value;
+
+			for(var i=0;i<courses.length; i++){
+				if(courses[i].checked){
+					selectedCourses += courses[i].value + ", ";
+				}
+			}
+			var display = "<h1>Trainees All Data</h1>";
+			display += "Name: " + fname + "<br>";
+			display += "Contact: " + email + "<br>";		
+			display += "Gender: " + gender + "<br>";			
+			display += selectedCourses + "<br>";
+			display += "Location: " + location + "<br>";
+
+			var mywin = window.open("", "", "width=400,height=300,top=300,left=400");
+			mywin.document.write(display);
+		}
+	</script> -->
+
+
+	<h1>Evidence 3 Question No 2</h1>
+
+	<!-- <form name="myform">
+		Email: <br>
+		<input type="email" name="email" placeholder="Enter your email"> <br>
+		Password: <br>
+		<input type="button" onclick="validate()" value="Login">
+	</form>
+
+	<script>
+		function validate(){
+			var email = prompt(document.myform.email.value);
+			var veryfidemail = email.search(/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/);
+			var status = false;
+			if(veryfidemail==-1){
+				alert("Email Address is Wrong");
+				return false;
+			} else{
+				alert("Email Address is correct");
+			}			
+		}
+	</script> -->
+
+	<h1>Evidence 3 Question No 3</h1>
+
+	<!-- <script>
+		function prime_check(n){
+			if(n==1){
+				return "<div class='notprime'>" +  n + " is not a prime number</div>";
+			} else if(n==2) {
+				return "<div class='prime'>" +  n + " is a prime number</div>";
+			} else {
+				for(var i=2; i<n; i++){
+					if(n % i ==0){
+						return "<div class='notprime'>" +  n + " is not a prime number</div>";
+					}
+				}
+				return "<div class='prime'>" +  n + " is a prime number</div>";
+			}
+		}
+
+		document.write(prime_check(prompt("Enter Number")));		
+		
+	</script> -->
+
+	
+</body>
+</html>

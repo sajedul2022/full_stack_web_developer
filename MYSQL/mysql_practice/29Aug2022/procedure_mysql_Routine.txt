@@ -1,0 +1,50 @@
+// login
+mysql -h localhost -u root -p
+
+----------------------Procedures with OUT Parameter---------------------------------------
+
+DELIMITER &&  
+CREATE PROCEDURE display_max_mark (OUT highestmark INT)  
+BEGIN  
+    SELECT MAX(marks) INTO highestmark FROM student_info;   
+END &&  
+DELIMITER ;  
+
+// call 
+CALL `display_max_mark`(@m); 
+SELECT @m AS `highestmark`;
+
+-----------------------------Procedures with INOUT Parameter-----------------
+DELIMITER &&  
+CREATE PROCEDURE display_marks (INOUT var1 INT)  
+BEGIN  
+    SELECT marks INTO var1 FROM student_info WHERE stud_id = var1;   
+END &&  
+DELIMITER ;  
+
+// can call the procedure as follows:
+
+SET @M = '3';  
+CALL display_marks(@M);  
+SELECT @M;  
+
+----------------- Store function-----------------
+
+DELIMITER //
+CREATE FUNCTION calculate_discount
+(emp_id CHAR(8)) RETURNS DECIMAL(10,2)
+COMMENT 'Calculate employee bonus'
+BEGIN
+ DECLARE total DECIMAL(10,2);
+ DECLARE bonus DECIMAL(10,2);
+ SELECT SUM(amount) INTO total FROM payments WHERE customerNumber = emp_id;
+ SET bonus = total * .05;
+ RETURN bonus;
+END; //
+DELIMITER ;
+
+// call
+SET @m='103'; 
+SELECT calculate_discount(@m) AS calculate_discount;
+
+

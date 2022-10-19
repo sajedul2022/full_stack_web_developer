@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	
+
+	<script>
+		function radioCheck(){
+
+			var component = document.hardware.component.value;
+			var display = "Your Answer is: \n";
+			 display += component + "\n";
+
+			 // var items = document.getElementsByClassName("item"); // by class name
+			 var items = document.querySelectorAll(".item"); // query any class or ID
+
+			for(var i=0; i<items.length; i++){
+
+				if(items[i].checked){
+					display += items[i].value +"\n";
+					
+				}
+
+			}
+
+			document.hardware.answer.value = display;
+
+			// document.getElementById("show").innerHTML = display;
+		}
+
+	</script>
+
+	<form name="hardware">
+
+		Pick one of the following:  <br>
+		<input type="radio" name="component"  value="Cost"> Cost  <br>
+		<input type="radio" name="component"  value="Reliability"> Reliability  <br>
+		<input type="radio" name="component"  value="Reputation"> Reputation  <br>
+		<input type="radio" name="component"  value="Ease of Use"> Ease of Use  <br>
+
+		Select plan to purchase: <br>
+		<input type="checkbox" name="buy" class="item" value="Printers"> Printers  <br>
+		<input type="checkbox" name="buy2" class="item" value="High capacity Disk">High capacity Disk<br>
+		<input type="checkbox" name="buy3" class="item" value="Scanner"> Scanner  <br>
+		<input type="checkbox" name="buy4" class="item" value="Additional Memory"> Additional Memory  <br><br>
+		<input type="button" onclick="radioCheck()" value="Check It Out"> <br> <br>
+
+		Your Result: <br>
+		<textarea name="answer" id="" cols="30" rows="10"> </textarea>
+
+	</form>
+
+
+	<h1 id="show"></h1>
+
+	
+</body>
+</html>

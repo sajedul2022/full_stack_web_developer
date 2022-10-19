@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>the title</title>
+<script type="text/javascript"
+src="../jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+$("em").addClass("selected");
+$("#myid").addClass("highlight myclass");
+});
+</script>
+<style>
+.selected { color:red; }
+.highlight { background:rgb(45, 211, 30); }
+.myclass {font-size:30px; border-bottom:2px solid blue}
+#myid {font-family:"Arial",sans-serif}
+</style>
+</head>
+<body>
+<em title="Bold and Brave">This is first paragraph.</em>
+<p id="myid">This is second paragraph.</p>
+</body>
+</html>

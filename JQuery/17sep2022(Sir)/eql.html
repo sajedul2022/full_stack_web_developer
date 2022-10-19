@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>the title</title>
+<script type="text/javascript"
+src="../jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$("li").eq(0).addClass("selected");
+$("li").eq(2).addClass("myclass");
+$("p").eq(0).addClass("myclass");
+});
+</script>
+<style>
+.selected { color:red; }
+.myclass {background-color:aqua}
+</style>
+</head>
+<body>
+<div>
+<ul>
+<li>list item 1</li>
+<li>list item 2</li>
+<li>list item 3</li>
+<li>list item 4</li>
+<li>list item 5</li>
+<li>list item 6</li>
+</ul>
+<p>1st Paragraph</p>
+<p>2nd Paragraph</p>
+</div>
+</body>
+</html>

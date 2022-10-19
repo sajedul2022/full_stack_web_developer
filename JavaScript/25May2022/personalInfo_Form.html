@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Personal Information</h2>
+
+	<form action="" name="info" method="get">
+		Name: <input type="text" name="fullname" placeholder="Enter Name"> <br>
+		Gender: <br>
+		Male: <input type="radio" name="gender" value="Male"> 
+		Female: <input type="radio" name="gender" value="Female"> <br>
+		District: <br>
+		<select name="district">
+			<option value="" disabled selected >Select One</option>
+			<option value="Dhaka">Dhaka</option>
+			<option value="Khulna">Khulna</option>
+		</select> <br>
+		Hobbies: <br>
+		Cricket <input type="checkbox" name="cricket"> 
+		Football <input type="checkbox" name="football">  <br>
+		Profile: <br> 
+		<textarea name="profile" cols="30" rows="10"></textarea> <br>
+
+		<input type="button" value="SEND" onclick="formme()">
+
+
+	</form>
+
+	<script>
+		function formme(){
+		var firstname = document.info.fullname.value;
+		var gender = document.info.gender.value;
+		var district = document.info.district.value;
+		var Hobbies1 = document.info.cricket.value;
+		var Hobbies2 = document.info.football.value;
+		var profile = document.info.profile.value;
+		
+
+		var total = "First name: " + firstname + "<br> " + "Gender: "+ gender + "<br> " +" District : " +district + "<br>" +  "Profile:  " + profile +" <br> "; 
+
+		document.getElementById("show").innerHTML =  total;
+		}
+
+	</script>
+	<h1 id="show"></h1>
+</body>
+</html>
