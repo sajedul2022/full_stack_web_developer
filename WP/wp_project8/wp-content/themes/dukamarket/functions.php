@@ -1,15 +1,23 @@
 <?php  
 
     // Theme support
-    add_theme_support('post-thumbnails');
-    add_theme_support( 'title-tag' );
-    add_theme_support( 'widgets' );
-    add_theme_support('custom-logo', array(
-        'width' => 200,
-        'height' => 26,
-    ));
-    add_theme_support( 'custom-background' );
 
+    // woocommerce 
+    function mytheme_add_woocommerce_support() {
+
+        add_theme_support('post-thumbnails');
+        add_theme_support( 'title-tag' );
+        add_theme_support( 'widgets' );
+        add_theme_support('custom-logo', array(
+            'width' => 200,
+            'height' => 26,
+            ));
+        add_theme_support( 'custom-background' );
+        add_theme_support( 'woocommerce' );
+    }
+    
+    add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+    
     /**  Add your scripts and styles*/
 
     function wooTheme_load_scripts() {
@@ -60,8 +68,8 @@
     }
     add_action('wp_enqueue_scripts', 'wooTheme_load_scripts');
 
-
-
+    // Woocomerce
+    add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 
 

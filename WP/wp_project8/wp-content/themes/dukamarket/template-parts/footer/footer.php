@@ -164,27 +164,6 @@
     </footer>
     <!-- footer-end -->
 
-      <!-- JS here -->
-      <!-- <script src="<?php // echo get_template_directory_uri()?>/assets/js/vendor/jquery.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/vendor/waypoints.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/bootstrap-bundle.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/meanmenu.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/swiper-bundle.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/tweenmax.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/owl-carousel.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/magnific-popup.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/parallax.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/backtotop.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/nice-select.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/countdown.min.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/counterup.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/ui-slider-range.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/wow.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/isotope-pkgd.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/imagesloaded-pkgd.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/ajax-form.js"></script>
-      <script src="<?php // echo get_template_directory_uri()?>/assets/js/main.js"></script> -->
-
       <?php wp_footer() ?>
    </body>
 </html>
