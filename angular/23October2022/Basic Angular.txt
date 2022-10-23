@@ -1,0 +1,294 @@
+1. -------------------------------- 	Google Own by- Angular js 	 ------------------------------------
+
+** Documentation:   https://angular.io/start
+**Git: 		https://github.com/angular/angular/releases
+
+** Download node.js: (version)
+https://nodejs.org/en/
+
+
+** Book: 
+https://classroom.google.com/c/NDg0ODUzNTUxMTY5/m/NTU4Nzc3MjY1OTAy/details
+https://classroom.google.com/c/NDg0ODUzNTUxMTY5/m/NTU4Nzc3MjY1OTAy/details
+
+2. -------------------------------- 	Command Line 	 ------------------------------------
+
+open cmd -> write // 
+node
+npm -v
+npm install --global @angular/cli@14.2.6
+
+3. ------------------------------	Angular : Creating and Preparing the Project      ------------------------------------
+
+
+Select file and file location click ->open cmd -> write // 
+	ng
+	ng new todo
+	y
+	(enter)
+
+ 4. ------------------------------	Server for application:  ng serve 	 ------------------------------------
+
+Select file and file location click ->open cmd -> write // 
+	ng serve
+	y
+	
+// result  http://localhost:4200/
+
+// Restart server:  ng serve
+
+// server off : clt+c
+
+
+
+ 5. ------------------------------	 	Edit file 		 ------------------------------------
+
+todo\src\app\app.component.html
+
+open file:
+clear 
+write custom Html
+
+6. ------------------------------	  	 Adding the Bootstrap CSS Package 	 ------------------------------------
+
+//server off :  cmd -> write 
+
+	clt+c
+	npm install bootstrap@4.1.1
+
+// result : angular\todo\node_modules\bootstrap
+
+and 
+Configuring Bootstrap  CSS in the angular.json File in the todo Folder:   open file angular.json
+
+	node_modules/bootstrap/dist/css/bootstrap.min.css
+
+Example:
+	"styles": [
+              		"src/styles.css",
+              		"node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+
+
+7.   ------------------------------	  	custom Port with default browser    ------------------------------------
+
+	ng serve --port 3000 --open
+
+
+// result : http://localhost:3000/
+
+
+8.  ----------------------	    Edit the todo/src folder to replace the contents:   index.html   --------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDo</title>
+    <meta charset="utf-8" />
+  </head>
+  <body class="m-1 p-1">
+    <h3 class="bg-primary text-white p-3">Adam's To Do List</h3>
+    <div class="my-1">
+      <input class="form-control" />
+      <button class="btn btn-primary mt-1">Add</button>
+    </div>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Done</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Buy Flowers</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Get Shoes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Collect Tickets</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Call Joe</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+		AND
+
+replace : <todo-app>Angular placeholder</todo-app>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDo</title>
+    <meta charset="utf-8" />
+  </head>
+  <body class="m-1 p-1">
+
+    <todo-app>Angular placeholder</todo-app>
+
+  </body>
+</html>
+
+
+9.  ----------------------	    Creating a Data Model 	----------------------	    
+
+
+	create file : model.ts 
+
+export class Model {
+ user;
+ items;
+ constructor() {
+ this.user = "Adam";
+ this.items = [new TodoItem("Buy Flowers", false),
+ new TodoItem("Get Shoes", false),
+new TodoItem("Collect Tickets", false),
+new TodoItem("Call Joe", false)]
+ }
+}
+export class TodoItem {
+ action;
+ done;
+ constructor(action:any, done:any) {
+ this.action = action;
+ this.done = done;
+ }
+}
+
+10. ----------------------	    Preparing the Template	----------------------	   
+ 
+app.component.html 	File in the src/app Folder
+
+	<h3 class="bg-primary p-1 text-white">{{ getName() }}'s To Do List</h3>
+
+And
+
+ app.component.ts  	File in the src/app Folder	
+
+	import { Component } from "@angular/core";
+import { Model } from "./model";
+@Component({
+ selector: "todo-app",
+ templateUrl: "app.component.html"
+})
+export class AppComponent {
+ model = new Model();
+ getName() {
+ return this.model.user;
+ }
+}
+
+11.  ----------------------	Putting the Application Together	----------------------	   
+
+	To enable these features, make the changes shown in Listing:  	app.module.ts 
+
+
+import { FormsModule } from "@angular/forms"; 		//  add FormsModule
+
+	@NgModule({
+ 		declarations: [AppComponent],
+		 imports: [BrowserModule, FormsModule], 	// add FormsModule
+ 		providers: [],
+ 		bootstrap: [AppComponent]
+	})
+
+
+12. ----------------------	Adding the To-Do Table	----------------------	  
+
+ ** app.component.ts 	File in the src/app Folder
+
+	getTodoItems() {
+	 	return this.model.items;
+ 	}
+
+** Displaying the To-Do Items in the app.component.html File in the src/app Folder
+
+<table class="table table-striped table-bordered">
+ <thead>
+ <tr><th></th><th>Description</th><th>Done</th></tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let item of getTodoItems(); let i = index">
+ <td>{{ i + 1 }}</td>
+ <td>{{ item.action }}</td>
+ <td [ngSwitch]="item.done">
+ <span *ngSwitchCase="true">Yes</span>
+ <span *ngSwitchDefault>No</span>
+ </td>
+ </tr>
+ </tbody>
+</table>
+
+*** Creating a Two-Way Data Binding     app.component.html  File in the src/app Folder
+
+	<td><input type="checkbox" [(ngModel)]="item.done" /></td>
+
+*** Filtering To-Do Items in the  app.component.ts  File in the src/app Folder
+
+	return this.model.items.filter(item => !item.done); 		// add this line Filtering To-Do Items in the
+
+This function:-> //
+	getTodoItems() {
+ 		return this.model.items.filter(item => !item.done); 		// add this line Filtering To-Do Items in the
+ 	}
+
+
+
+14. ----------------------	Adding To-Do Items		----------------------	  
+
+ *** app.component.html File in the src/app Folder
+
+<div class="my-1">
+ <input class="form-control" #todoText />
+ <button class="btn btn-primary mt-1" (click)="addItem(todoText.value)">
+ Add
+ </button>
+</div>
+
+*** app.component.ts File in the src/app Folder
+
+import { Model, TodoItem } from "./model";  	// TodoItem 
+
+// add this bellow code : export class AppComponent { // add button addItem(newItem) {} } 
+
+	addItem(newItem) {
+ 		if (newItem != "") {
+	 	this.model.items.push(new TodoItem(newItem, false));
+ 		}
+	 }
+
+
+
+14. ----------------------	Understanding code		----------------------	  
+
+	step-1:   import
+		import { Component } from "@angular/core";
+		import { Model, TodoItem } from "./model";
+
+
+	step-2:  Decorator for Html file ||  app.component.html
+		@Component({
+ 			selector: "todo-app",
+ 			templateUrl: "app.component.html"
+		})
+
+
+	step:3 	Display Or show
+		
+		export class AppModule { }
+
+		model = new Model();
+ 			getName() {
+ 			return this.model.user;
+ 		}
+
+
