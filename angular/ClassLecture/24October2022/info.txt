@@ -1,0 +1,133 @@
+1. ------------        Creating the New Project    -----------------
+
+//select folder -> open cmd, Creating the new Project
+
+ng new Primer --routing false --style css --skip-git --skip-tests
+
+// install Bootstrap
+npm install bootstrap@5.1.3
+
+// configure css bootstrap, file name:   angular.json  -> [""src/styles.css"",
+
+	"node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+// server open 
+ng serve --open
+
+// Replacing the Contents of the  index.html  File in the src Folder
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>ToDo</title>
+ <meta charset="utf-8" />
+</head>
+<body class="m-1">
+ <h3 class="bg-primary text-white p-3">Adam's To Do List</h3>
+ <div class="my-1">
+ <input class="form-control" />
+ <button class="btn btn-primary mt-1">Add</button>
+ </div>
+ <table class="table table-striped table-bordered">
+ <thead>
+ <tr>
+ <th>Description</th>
+ <th>Done</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td>Buy Flowers</td><td>No</td></tr>
+ <tr><td>Get Shoes</td><td>No</td></tr>
+ <tr><td>Collect Tickets</td><td>Yes</td></tr>
+ <tr><td>Call Joe</td><td>No</td></tr>
+ </tbody>
+ </table>
+</body>
+</html>
+
+2. ------------        TypeScript Workflow   -----------------
+
+// Understanding the TypeScript Workflow
+create file:  example.js 
+
+function myFunction(param) {
+ let result = param + 100;
+ console.log("My result: " + result);
+}
+myFunction(1);
+myFunction("London");
+
+//check terminal Or cmd file name
+node pratices/example.js
+
+
+// Compiling the Function with TypeScript Replacing the Contents of the main.ts File in the src Folder
+
+function myFunction(param) {
+ if (typeof(param) == "number") {
+ let result = param + 100;
+ console.log("My result: " + result);
+ } else {
+ throw ("Expected a number: " + param)
+ }
+}
+myFunction(1);
+myFunction("London");
+
+
+// next step  check terminal Or cmd file name
+node src/main.ts
+
+//result
+
+Error: src/main.ts:1:21 - error TS7006: Parameter 'param' implicitly has an 'any' type.
+1 function myFunction(param) {
+
+//  Parameter 'param' implicitly has an 'any' type. Need set typeof like string, number, boolean, any . function myFunction(param: any) {
+
+
+function myFunction(param: any) {
+ if (typeof(param) == "number") {
+ let result = param + 100;
+ console.log("My result: " + result);
+ } else {
+ throw ("Expected a number: " + param)
+ }
+}
+myFunction(1);
+myFunction("London");
+
+
+// Using a Type Union: 
+unction myFunction(param: number | string) {
+ if (typeof(param) == "number" || typeof(param) == "string")
+	let result = (param as any) + 100; //
+
+
+
+function myFunction(param: number | string) {
+ if (typeof(param) == "number" || typeof(param) == "string") {
+ let result = (param as any) + 100;
+ console.log("My result: " + result);
+ } else {
+ throw ("Expected a number or a string: " + param)
+ }
+}
+myFunction(1);
+myFunction("London");
+
+
+// set up type script  to js
+
+npm install -g typescript
+tsc src/main.ts
+node src/main.js
+
+
+3. ------------        Any git project setup and run -----------------
+ git clone link
+select file and cmd open
+npm install
+ // any severy vulnerable 
+npm update
+ng serve --open
