@@ -1,0 +1,207 @@
+0. ------------    Understanding	Symbol 	 ------------ 
+
+	??    		Nullish-coalescing operator (??)
+	||  		Null Coalescing Operator   ||
+	?		chaining operator / Optional (?) 
+	:  		Returning a Result type in function    : string 
+	... 	 	Rest unlimited Parameters Allow  in function / Spread Operator
+
+	f: () => string 	Functions as Arguments to Other Functions using Arrow Syntax
+
+		function getUKCapital() : string {
+ 			return "London";
+		}
+
+		function writeCity(f: () => string) {
+ 			console.log(`City: ${f()}`)
+		}
+
+		writeCity(getUKCapital);
+
+
+	 () => "Paris"		Functions Using the Arrow Syntax 	
+				writeCity( () => "Paris"); // annonoumous function or Closure
+
+
+
+1. ------------    Null Coalescing Operator   ||      -----------------
+let val1: string | undefined;
+let val2: string | undefined = "London";
+let coalesced1 = val1 || "fallback value";
+let coalesced2 = val2 || "fallback value";
+console.log(`Result 1: ${coalesced1}`);
+console.log(`Result 2: ${coalesced2}`);
+
+// Result
+Result 1: fallback value
+Result 2: London
+
+2. ------------     nullish-coalescing operator (??)   null or undefined ------------    
+
+let val1: string | undefined;
+let val2: string | undefined = "London";
+let val3: number | undefined = 0;
+let val4: null | undefined = null;
+
+let coalesced1 = val1 ?? "fallback value";
+let coalesced2 = val2 ?? "fallback value";
+let coalesced3 = val3 ?? 100;
+let coalesced4 = val4 ?? 50;
+
+console.log(`Result 1: ${coalesced1}`);
+console.log(`Result 2: ${coalesced2}`);
+console.log(`Result 3: ${coalesced3}`)
+console.log(`Result 4: ${coalesced4}`)
+
+3. ------------   chaining operator (the ? character)  ------------  
+
+let count: number | undefined | null = 100;
+
+let result2: string | undefined = count?.toFixed(2);
+
+console.log(`Result 2: ${result2}`);
+
+4. ------------    Defining a Function   ------------ 
+
+function writeValue(val: string | null) {
+ console.log(`Value: ${val ?? "Fallback value"}`)
+}
+writeValue("London");
+writeValue(null);
+
+5. ------------    Defining an Optional (?) Parameter   ------------ 
+
+function writeValue(val?: string) {
+    console.log(`Value: ${val ?? "Fallback value"}`)
+   }
+   writeValue("London");
+   writeValue();
+
+6. ------------     Rest Parameters  unlimited	 ------------ 
+
+// 4-5
+
+function writeValue(val: string | number, ...extraInfo: (string | number)[] ) {
+    console.log(`Value: ${val}, Extras: ${extraInfo}`)
+   }
+   writeValue("London", "Raining", "Cold");
+   writeValue("Paris", "Sunny");
+   writeValue("New York");
+   writeValue(30);
+   writeValue("Dhaka", "Raining", "Cold", "London", "Raining", "Cold", 60);
+
+
+
+
+6. ------------    Returning a Result type in function    : string 	 ------------ 
+
+function composeString(val: string) : string {
+ return `Composed string: ${val}`;
+}
+function writeValue(val?: string) {
+ console.log(composeString(val ?? "Fallback value"));
+}
+writeValue("London");
+writeValue();
+
+
+7. ------------   f: () => string 	Functions as Arguments to Other Functions using Arrow Syntax	 ------------ 
+
+
+		function getUKCapital() : string {
+ 			return "London";
+		}
+
+		function writeCity(f: () => string) {
+ 			console.log(`City: ${f()}`)
+		}
+
+		writeCity(getUKCapital);
+		writeCity( () => "Paris" ); 	// annonoumous function or Closure
+
+
+
+8. ------------  Understanding Value Closure  ------------
+
+function getUKCapital() : string {
+ return "London";
+}
+function writeCity(f: () => string) {
+ console.log(`City: ${f()}`)
+}
+writeCity(getUKCapital);
+writeCity(() => "Paris");
+let myCity = "Rome";
+writeCity(() => myCity);
+
+8. ------------  Using a Type Annotation  ------------
+
+let myArray: any[] = [];
+myArray[0] = 100;
+myArray[1] = "Adam";
+myArray[2] = true;
+
+OR
+
+
+let myArray: (number | string | boolean)[] = [];
+myArray[0] = 100;
+myArray[1] = "Adam";
+myArray[2] = true;
+
+9. ----------------  Reading the Data from an Array and replace   ---------------
+
+
+// Reading the Data from an Array 
+
+    let myArray: (number | string | boolean)[] = [100, "Adam", true];
+
+     let val = myArray[0];
+    console.log(`Value: ${val}`)
+
+// replace value
+
+let myArray: (number | string | boolean)[] = [100, "Adam", true];
+
+myArray[0] = "Tuesday";
+let val = myArray[0];
+console.log(`Value: ${val}`);
+
+
+9. ----------------   Contents of an Array for loop   ---------------
+
+let myArray: (number | string | boolean)[] = [100, "Adam", true];
+for (let i = 0; i < myArray.length; i++) {
+ console.log("Index " + i + ": " + myArray[i]);
+}
+
+console.log("---");
+// forEach loop
+myArray.forEach((value, index) => console.log("Index " + index + ": " + value));
+
+
+ 
+10. ----------------   4-17. Using the Spread Operator ( ... )  array ---------------
+
+let myArray: (number | string | boolean)[] = [100, "Adam", true];
+let otherArray = [...myArray, 200, "Bob", false];
+// for (let i = 0; i < myArray.length; i++) {
+// console.log("Index " + i + ": " + myArray[i]);
+
+// }
+// console.log("---");
+
+	OR 
+
+otherArray.forEach((value, index) => console.log("Index " + index + ": " + value));
+
+
+
+10. ----------------   Processing a Data Array   ---------------
+
+let myArray: (number | string | boolean)[] = [100, "Adam", true];
+let otherArray = [...myArray, 200, "Bob", false];
+let sum: number = otherArray
+ .filter(val => typeof(val) == "number")
+ .reduce((total: number, val) => total + (val as number), 0)
+console.log(`Sum: ${sum}`);
